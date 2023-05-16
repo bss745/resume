@@ -1,0 +1,79 @@
+<div>
+  {{#with main}}
+    <main>
+      <section>
+        {{> title name="Work history" big=true}}
+        <div>
+            <ul>
+              {{#each works}}
+                <li>
+                  <div>{{position}}</div>
+
+                  <br>
+
+                    <div>{{duration.from}} - 
+                      {{#if duration.to}} {{duration.to}} 
+                      {{else}} (працює) 
+                      {{/if}}
+                    </div>
+                  
+                  <br>
+
+                  <div>
+                    {{#unless company.url}} 
+                    <b>{{company.name}}</b>
+                    {{else}}
+                    {{> link href=company.url target=true text=company.name noLine=true}}
+                    {{/unless}}
+                  </div>
+
+                  <br>
+                  <br>
+
+                  <div><strong>Projects: ({{projectAmount}})</strong></div>
+                  {{!-- <a href="{{company.url}}" target="_blank"> {{company.name}}</a> --}}
+                </li>
+                
+                <br>
+                
+                <ul>
+                  {{#each projects}}
+                  <li>
+                    <div>
+                    {{> link href=url target=true text=name noLine=true}}
+                    </div>
+                    <br>
+                    <div><p>{{about}}</p></div>
+                    <br>
+                    <em>Project stacks: ({{stackAmount}})</em>
+                    <div>
+                      {{#each stacks}}
+                      {{name}}
+                      <br>
+                      {{/each}}
+                    </div>
+                    <br>
+                    <em>Project awards:</em>
+                    <div>
+                      {{#each awards}}
+                      {{name}}
+                      <br>
+                      {{/each}}
+                  </li>
+                  {{/each}}
+                </ul>
+
+              {{/each}}
+            </ul>
+        </div>
+      </section>
+      
+    </main>
+  {{/with}}
+
+  </div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
