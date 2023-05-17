@@ -261,12 +261,13 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
+    layout: 'person',
     person: {
       name: 'Emma Johnson',
       age: 32,
       gender: 'Female',
       address: {
-        street: '123 Main St',
+        street: '123 Main Str',
         city: 'New York',
         state: 'NY',
         zip: '10001',
@@ -355,6 +356,7 @@ router.get('/person', function (req, res) {
   })
 })
 
+// ================================================================
 
 // Підключаємо роутер до бек-енду
 module.exports = router
