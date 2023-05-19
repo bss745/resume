@@ -1,0 +1,243 @@
+<div>
+  <main>
+    <section>
+      <h1>{{name}}</h1>
+      <strong>{{description}}</strong>
+      {{#with history}}
+        <em>{{founder}}, {{year}}</em>
+      {{/with}}
+      <hr />
+    </section>
+    <section>
+      {{#with types}}
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Number</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >String</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Boolean</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Null</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Underfined</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Symbol</button>
+        <button
+          type='button'
+          class='btn btn-primary'
+        >Object</button>
+      {{/with}}
+      <hr />
+    </section>
+    <section>
+      {{#with syntax}}
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic example'
+        >
+          <button
+            type='button'
+            class='btn btn-primary'
+          >var</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >let</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >const</button>
+        </div>
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic example'
+        >
+          <button
+            type='button'
+            class='btn btn-primary'
+          >function</button>
+        </div>
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic example'
+        >
+          <button
+            type='button'
+            class='btn btn-primary'
+          >if</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >else</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >switch</button>
+        </div>
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic example'
+        >
+          <button
+            type='button'
+            class='btn btn-primary'
+          >for</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >while</button>
+          <button
+            type='button'
+            class='btn btn-primary'
+          >do-while</button>
+        </div>
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic example'
+        >
+          <button
+            type='button'
+            class='btn btn-primary'
+          >class</button>
+        </div>
+      {{/with}}
+      <hr />
+    </section>
+    <section>
+      <em>Features:</em>
+      <div class='list-group'>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >
+          <li class='list-group-item'>First-class functions</li>
+        </button>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >Closures</button>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >Dynamic typing</button>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >Prototype-based inheritance</button>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >Asynchronous programming with Promises and
+          async/await</button>
+        <button
+          type='button'
+          class='list-group-item list-group-item-action'
+        >Modules with import/export statements</button>
+
+      </div>
+      <br />
+    </section>
+    <section>
+      <ul class='nav'>
+        <li class='nav-item'>
+          <a
+            class='nav-link'
+            aria-current='page'
+            href='#'
+          >jQuery</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>React</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Angular</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Vue</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Node.js</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Express.js</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Lodash</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link disabled'>Moment.js</a>
+        </li>
+      </ul>
+      <hr />
+    </section>
+    <section>
+      <ul class='nav nav-pills'>
+        <li class='nav-item'>
+          <a
+            class='nav-link active'
+            aria-current='page'
+            href='#'
+          >Babel</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Webpack</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>ESLint</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Jest</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Mocha</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Chai</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Selenium</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link disabled'>Cypress</a>
+        </li>
+      </ul>
+      <hr />
+    </section>
+    <section>
+      {{#each community}}
+        <div
+          class='btn-group'
+          role='group'
+          aria-label='Basic outlined example'
+        >
+          <button
+            type='button'
+            class='btn btn-outline-primary'
+          >{{name}}</button>
+          <button
+            type='button'
+            class='btn btn-outline-primary'
+          >{{type}}</button>
+
+        </div>
+      {{/each}}
+    </section>
+  </main>
+</div>
