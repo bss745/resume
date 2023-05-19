@@ -1,0 +1,139 @@
+<div>
+  <main>
+    <div class="card">
+        <div class="card-body">
+    {{> title name="Toyota Camry 2022" big=true}}
+    <em>{{> title name="colour: silver" big=false}}</em>
+        </div>
+    </div>
+   
+    <section>
+    {{#with features}} 
+        {{#with interior}}
+        <button type="button" class="btn btn-secondary">Interior</button>
+            
+
+            <ul>{{#with seats}}
+                <em>Seats:</em>
+                <li>Material: {{material}}</li>
+                <li>Color: {{color}}</li>
+                <li>{{#if heated}} Heated: Yes {{/if}}</li>
+                <li>{{#if ventilated}} Ventilated: Yes {{/if}}</li>
+                {{/with}}
+            </ul>
+            <ul>{{#with dashboard}}
+                <em>Dashboard:</em>
+                <li>Material: {{material}}</li>
+                <li>Color: {{color}}</li>
+                <li>Display: {{display.type}}, {{display.size}}, {{display.resolution}}, touchscreen {{#if display.touchscreen}} (Yes) {{/if}}</li>
+                {{/with}}
+            </ul>
+            <ul>{{#with audio}}
+                <em>Audio:</em>
+                <li>System: {{system}}</li>
+                <li>Speakers: {{speakers}}</li>
+                <li>{{#if subwoofer}} Subwoofer: Yes {{/if}}</li>
+                <li>{{#if bluetooth}} Bluetooth: Yes {{/if}}</li>
+                <li>{{#if USB}} USB: Yes {{/if}}</li>
+                {{/with}}
+            </ul>
+        {{/with}}
+        <hr>
+    </section>
+    <section>
+        {{#with exterior}}
+        <button type="button" class="btn btn-secondary">Exterior</button>
+            
+                <ul>{{#with wheels}}
+                <em>Wheels:</em>
+                <li>Size: {{size}}</li>
+                <li>Type: {{type}}</li>
+                <li>Color: {{color}}</li>
+            {{/with}}
+            </ul>
+            <ul>{{#with headlights}}
+                <em>Headlights:</em>
+                <li>Type: {{type}}</li>
+                <li>Brightness: {{brightness}}</li>
+                <li>Automatic: {{#if automatic}} (Yes) {{/if}}</li>
+            {{/with}}
+            </ul>
+            <ul>{{#with sunroof}}
+                <em>Sunroof:</em>
+                <li>Type: {{type}}</li>
+                <li>Size: {{size}}</li>
+                <li>Automatic: {{#if automatic}} (Yes) {{/if}}</li>
+            {{/with}}
+            </ul>
+        {{/with}} 
+           <hr>
+    </section>
+    <section>
+        {{#with safety}}
+           <button type="button" class="btn btn-secondary">Safety</button>
+                <ul>{{#with airbags}}
+                <em>Airbags:</em>
+                <li>Front: {{front}}</li>
+                <li>Side: {{side}}</li>
+                <li>Knee: {{knee}}</li>
+                <li>Rear: {{rear}}</li>
+            {{/with}}
+            </ul>
+            <ul>{{#with assistance}}
+                <em>Assistance:</em>
+                <li>Blind spot monitoring: {{#if blind_spot_monitoring}} (Yes) {{/if}}</li>
+                <li>Rear cross traffic alert: {{#if rear_cross_traffic_alert}} (Yes) {{/if}}</li>
+                <li>Lane departure warning: {{#if lane_departure_warning}} (Yes) {{/if}}</li>
+                <li>Adaptive cruise control: {{#if adaptive_cruise_control}} (Yes) {{/if}}</li>
+                <li>Collision warning: {{#if collision_warning}} (Yes) {{/if}}</li>
+            {{/with}}
+            </ul>
+            <ul>{{#with sunroof}}
+                <em>Sunroof:</em>
+                <li>Type: {{type}}</li>
+                <li>Size: {{size}}</li>
+                <li>Automatic: {{#if automatic}} (Yes) {{/if}}</li>
+            {{/with}}
+            </ul>
+        {{/with}} 
+           <hr>
+    </section> 
+
+    {{/with}}
+    <section>
+        <button type="button" class="btn btn-secondary">Engine</button>
+        <ul>{{#with engine}}
+                
+                <li>Type: {{Type}}</li>
+                <li>Displacement: {{displacement}}</li>
+                <li>Horsepower: {{horsepower}}</li>
+                <li>Torque: {{torque}}</li>
+                <li>transmission: type{{transmission.type}}, gears:{{transmission.gears}}</li>
+            {{/with}}
+            </ul>
+        <b>Fuel economy</b>
+        <ul>{{#with fuel_economy}}
+
+                <li>City: {{city}}</li>
+                <li>Highway: {{highway}}</li>
+                <li>Combined: {{combined}}</li>
+            {{/with}}    
+            </ul>
+                
+    </section>
+    <hr>
+    <section>
+        <button type="button" class="btn btn-primary">Price</button>
+        {{#with price}}
+            <ul>
+                <li>Base: {{base}}</li>
+                <li>Destination: {{destination}}</li>
+                <li>{{#with options}}Options: Navigation: {{navigation}}, 
+                    Moonroof: {{moonroof}}, Premium paint: {{premium_paint}}{{/with}}</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary">Total: {{total}}</button>
+        {{/with}}   
+    </section>
+    
+  </main>
+</div>
