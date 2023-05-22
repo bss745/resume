@@ -1,0 +1,77 @@
+<div>
+  <main>
+    <div class="card">
+        <div class="card-body">
+    {{> title name=name big=true}}
+    <em>{{> title name=description big=false}}</em>
+    <button type="button" class="btn btn-outline-primary">{{price}}</button>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+    <em>{{> title name=category big=false}}</em>
+    {{#with features}}
+        <ul> {{#with processor}} Processor:
+            <li>Brand: {{brand}}</li>
+            <li>Model: {{model}}</li>
+            <li>Speed: {{speed}}</li>
+            <li>Cores: {{cores}}</li>
+            <li>Cache: {{cache}}</li>
+        </ul>  {{/with}}  
+        <ul> {{#with memory}} Memory:
+            <li>Type: {{type}}</li>
+            <li>Size: {{size}}</li>
+            <li>Speed: {{speed}}</li>
+        </ul>  {{/with}}  
+        <ul> {{#with storage}} Storage:
+            <li>Type: {{type}}</li>
+            <li>Size: {{size}}</li>
+        </ul>  {{/with}}  
+        <ul> {{#with display}} Display:
+            <li>Size: {{size}}</li>
+            <li>Resolution: {{resolution}}</li>
+            <li>Technology: {{technology}}</li>
+            <li>Color space: {{color_space}}</li>
+            <li>Brightness: {{brightness}}</li>
+            <li>Refresh rate: {{refresh_rate}}</li>
+        </ul>  {{/with}}  
+        <ul> {{#with graphics}} Graphics:
+            <li>Brand: {{brand}}</li>
+            <li>Model: {{model}}</li>
+            <li>Memory: {{memory}}</li>
+        </ul>  {{/with}}  
+        <ul> {{#each ports}} Ports:
+            <li>Type: {{type}}</li>
+            <li>Count: {{count}}</li>
+            <li>Features: {{#if features}} {{features}} {{else}} (no) {{/if}}</li>
+            </ul> {{/each}}
+        <br> 
+        <ul> {{#with battery}} Battery:
+            <li>Type: {{type}}</li>
+            <li>Capacity: {{capacity}}</li>
+            <li>Life: {{life}}</li>
+        </ul>  {{/with}}  
+        <ul> Weight:
+            <li>{{weight}}</li>
+        </ul>  
+        <ul> {{#with dimensions}} Dimensions:
+            <li>Height: {{height}}</li>
+            <li>Width: {{width}}</li>
+            <li>Depth: {{depth}}</li>
+        </ul>  {{/with}}
+        <ul> Operating system:
+            <li>{{operating_system}}</li>
+        </ul>    
+        Accessories:
+        <ul> {{#each accessories}} 
+            <li>Name: {{name}}</li>
+            <li>Price: {{price}}</li>
+            <br>
+        </ul> {{/each}}
+    {{/with}}
+    </div>
+        </div>
+
+  </main>
+</div>
