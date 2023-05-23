@@ -1,0 +1,59 @@
+<div>
+  <main>
+    <div class="card">
+        <div class="card-body">
+    {{> title name=name big=true}}
+         </div>
+    </div>
+    <br>
+    {{#each users}}
+        <div>
+            <button type="button" class="btn btn-primary">Users:</button>
+            <ul>
+                <li>ID: {{id}}</li>
+                <li>Name: {{name}}</li>
+                <li>Gender: {{gender}}</li>
+                <li>Age: {{age}}</li>
+                <br>
+                <ul>{{#each friends}}<button type="button" class="btn btn-outline-primary">Friends:</button>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Age: {{age}}</li>
+                <br>
+                
+                    <ul>{{#each mutual_friends}}<button type="button" class="btn btn-outline-info">Mutual friends:</button>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Age: {{age}}</li>
+                <br>
+                    {{/each}}
+                    </ul>
+                {{/each}}
+                </ul>
+                <hr>
+                {{#each groups}} 
+                <ul><button type="button" class="btn btn-outline-success">Groups:</button>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Description: {{description}}</li>
+                    <br>
+                    {{#each members}}
+                    <ul> <button type="button" class="btn btn-outline-danger">Members:</button>
+                        <li>ID: {{id}}</li>
+                        <li>Name: {{name}}</li>
+                        <li>Gender: {{gender}}</li>
+                        <li>Age: {{age}}</li>  
+                    <br>     
+                    <hr>
+                    </ul>
+                    {{/each}}
+                </ul>
+                {{/each}}
+            </ul>
+
+        </div>
+    {{/each}}
+  </main>
+</div>
