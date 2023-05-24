@@ -1,5 +1,5 @@
 <main>
-  {{!-- <div class='row text-bg-light'> --}}
+  
     <section>
     <p>
       {{#with navigation}}
@@ -32,7 +32,8 @@
             <section>
                 <div class="row gx-2 gy-3">
                     {{#each cards}}
-                            <div class='card col-5'>
+                            <div class='col-5'>
+                                <div class="card">
                                 {{#with picture}}
                                     <img
                                     class='card-img-top'
@@ -46,6 +47,7 @@
                                 {{#with button}}
                                     <a href='{{href}}' class='btn btn-primary'>{{text}}</a>
                                 {{/with}}
+                                    </div>
                                 </div>
                             </div>
                     {{/each}}
@@ -101,20 +103,20 @@
         </section>
 
         <div class="row">
-                    {{#each cards}}
-                        <div class="card col-4">
-                
-                            <div class="card-header">
-                                <div>{{name}}</div>
-                            </div>
-                    
-                    <ul class="list-group">{{#each items}}
-                        <li class="list-group-item">{{[]}}
-
-                        </li>
-                        {{/each}}
-                    </ul>
+            {{#each cards}}
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>{{name}}</div>
                         </div>
+                    
+                        <ul class="list-group">
+                            {{#each items}}
+                            <li class="list-group-item">{{[]}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
                 
             {{/each}}
         </div>
@@ -133,8 +135,8 @@
 
         <div class="row g-2">
             {{#each cards}}
-                <div class="card col-5 text-bg-secondary">
-                
+                <div class="col-5">
+                    <div class="card text-bg-secondary">
                             <div class="card-header">
                                 <div>{{header}}</div>
                             </div>
@@ -145,6 +147,7 @@
                             <div class="card-body">
                                 <div>{{description}}</div>
                             </div>
+                    </div>
                 </div>    
             {{/each}}
         </div>
@@ -156,19 +159,21 @@
         
         <div class="row g-2">
             {{#each cards}}
-            <div class="card col-5">
-                <div class="card-header">
-                    <div>{{header}}</div>
-                </div>
-                <div class="card-title">
-                    <div>{{title}}</div>
-                </div>
-                <div class="card-body">
-                    <div>{{description}}</div>
-                    <button type="button" class="btn btn-primary">{{button}}</button>
-                </div>
-                <div class="card-footer">
-                    <div>{{footer}}</div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header">
+                        <div>{{header}}</div>
+                    </div>
+                    <div class="card-title">
+                        <div>{{title}}</div>
+                    </div>
+                    <div class="card-body">
+                        <div>{{description}}</div>
+                        <button type="button" class="btn btn-primary">{{button}}</button>
+                    </div>
+                    <div class="card-footer">
+                        <div>{{footer}}</div>
+                    </div>
                 </div>
             </div>
             {{/each}}
@@ -189,15 +194,17 @@
 
         <div class="row g-2">
             {{#each card}}
-            <div class="card col-5 text-bg-warning">
-                <div class="card-header">
-                    <div>{{header}}</div>
-                </div>
-                <div class="card-title">
-                    <div>{{title}}</div>
-                </div>
-                <div class="card-body">
-                    <div>{{description}}</div>
+            <div class="col-5">
+                <div class="card text-bg-warning">
+                    <div class="card-header">
+                        <div>{{header}}</div>
+                    </div>
+                    <div class="card-title">
+                        <div>{{title}}</div>
+                    </div>
+                    <div class="card-body">
+                        <div>{{description}}</div>
+                    </div>
                 </div>
             </div>
             {{/each}}
@@ -216,77 +223,38 @@
             </div>
         </section>
         
-        {{!-- <table class="table">
-            <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            </thead>
-
-                
-            <tbody>
-                
-            <tr>
-                {{#each navigation}} 
-                <td><a href='{{href}}' class='btn btn-link'>{{text}}</a></td>
-                {{!-- <td class="list-group-item"><a href='{{href}}' class='btn btn-outline-dark'>{{text}}</a></td>
-                <td class="list-group-item"><a href='{{href}}' class='btn btn-outline-info'>{{text}}</a></td>         --}}
-                {{!-- {{/each}}
-            </tr>
-            
-            </tbody>
-                
-        </table> --}} 
-        {{!-- <div>
-            {{#each navigation}}
-                <a href="{{href}}" class="btn btn-link col-3">{{text}}</a>
-                </a>
-            {{/each}} 
-        </div>
-        <div>
-            {{#each socialMedia}}
-                <a href="{{href}}" class="btn btn-ordinary-dark col-3">{{text}}</a>
-                </a>
-            {{/each}} 
-        </div>
-        <div>
-            {{#each partners}}
-                <a href="{{href}}" class="btn btn-ordinary-info col-3">{{text}}</a>
-                </a>
-            {{/each}} 
-        </div> --}}
-            
-
-        
         <div class="row">
                    
-                <div class="col-3 list-group">
+                <div class="col-4 list-group">
                     {{#each navigation}}
-                    <div><a href="{{href}}" class="btn btn-link">{{text}}</a></div>
+                    <a href="{{href}}" class="list-item" target="blank">
+                    <button class="btn btn-link">{{text}}</button></a>
+                    <br>
                     {{/each}}
                 </div>
                     
                     
-                <div class="col-3 list-group">
+                <div class="col-4 list-group">
                     {{#each socialMedia}}
-                    <div><a href="{{href}}" class="btn btn-dark">{{text}}</a></div>
+                    <a href="{{href}}" class="list-item" target="blank">
+                    <button class="btn btn-outline-dark">{{text}}</button></a>
+                    <br>
                     {{/each}}
                 </div>
                     
                     
-                <div class="col-6 list-group">
+                <div class="col-4 list-group">
                     {{#each partners}}
-                    <div><a href="{{href}}" class="btn btn-info">{{text}}</a></div>
+                    <a href="{{href}}" class="list-item" target="blank">
+                    <button class="btn btn-outline-info">{{text}}</button></a>
+                    <br>
                     {{/each}}
                 </div>
                     
         </div>
-         
 
 
     
     {{/with}}
-  {{!-- </div> --}}
+  
 </main>
