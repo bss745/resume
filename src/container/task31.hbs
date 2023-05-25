@@ -34,19 +34,19 @@
                     {{#each cards}}
                             <div class='col-5'>
                                 <div class="card">
-                                {{#with picture}}
-                                    <img
-                                    class='card-img-top'
-                                    src='{{src}}'
-                                    alt='{{alt}}'
-                                    />
-                                {{/with}}
+                                    {{#with picture}}
+                                        <img
+                                        class='card-img-top'
+                                        src='{{src}}'
+                                        alt='{{alt}}'
+                                        />
+                                    {{/with}}
                                     <div class='card-body'>
-                                    <h5 class='card-title'>{{title}} </h5>
-                                    <p>{{description}}</p>
-                                {{#with button}}
-                                    <a href='{{href}}' class='btn btn-primary'>{{text}}</a>
-                                {{/with}}
+                                        <h5 class='card-title'>{{title}} </h5>
+                                        <p>{{description}}</p>
+                                        {{#with button}}
+                                            <a href='{{href}}' class='btn btn-primary'>{{text}}</a>
+                                        {{/with}}
                                     </div>
                                 </div>
                             </div>

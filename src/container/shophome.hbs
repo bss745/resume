@@ -1,0 +1,143 @@
+<main>
+  <div>
+    <hr>
+    {{#with navigation}}
+        <div class='nav'>
+            {{#each links}}
+                <div class='nav-item'>
+
+                <a href='{{href}}' class='nav-link'>{{text}}</a>
+
+                </div>
+            {{/each}}
+        <div class='nav-item'>
+            <a href='#' class='nav-link disabled'>Disabled</a>
+        </div>
+        </div>
+    {{/with}}
+  </div>
+  <hr />
+
+<section>
+    {{#with newsBlock}}
+    <div class="text-center">
+            {{>title name=title big=true}}
+    </div>
+        <div class="row g-2">
+            {{#each cards}}
+            <div class='col-3'>
+                    <div class="card">
+                        <div class="card-body text-bg-dark">
+                            <h5 class="card-title p-1">{{title}}
+                                {{#if isTop}}<span class="badge text-bg-success">Нова</span>{{/if}}
+                                {{#if isNew}}<span class="badge text-bg-danger">Топ</span>{{/if}}
+                                </h5>
+
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+            </div> 
+            {{/each}}
+        </div>
+    
+    {{/with}}
+</section>
+    <hr>
+{{#with goodsBlock}} 
+    
+    <div class="nav nav-tabs">
+        {{#each tabs}}
+            <div class="nav-item">
+                {{#if isActive}}
+                <a href="#" class='nav-link active'>{{text}}
+                {{!-- {{else}}<a class='nav-link'>{{text}}</a> --}}
+                </a>
+                {{/if}}
+                
+                {{#if isDisabled}}
+                <a href="#"class='nav-link disabled'>{{text}}</a>
+                {{/if}} 
+                                                    
+            </div>
+    
+        {{/each}}
+    </div>
+           
+    <div class="row g-2">
+        {{#each cards}}
+            <div class="col-4">
+                <div class="card">
+                    <img class='card-img-top'
+                        src='{{image}}'
+                        alt='{{title}}'/>
+                    <div class='card-body'>
+                        <h5 class="card-title p-1">{{title}}
+                        {{#if isHot}}<span class="badge text-bg-warning rounded-pill">HOT!</span>{{/if}}
+                        {{#if isNew}}<span class="badge text-bg-primary rounded-pill">Нове</span>{{/if}}
+                        </h5>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/with}} 
+<hr>
+        
+{{#with subscribe}}
+<div class="row">
+    <div class="col-12">
+        <div class="card text-bg-dark">
+            <div class="card-header">
+                {{>title name=header big=true}}
+            </div>
+            <div class="card-body">
+            <p class="text-uppercase">{{description}}</p>
+                <div>
+                {{#each buttons}}
+                <a href="{{link}}" class="btn btn-primary col-3 flex-column mb-2">{{text}}</a>
+                <br>
+                {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/with}}
+<hr>
+
+{{#with service}}
+<div class="row">
+    <div class="col-12">
+        <div class="card text-bg-success">
+            <div class="card-header text-center">
+                {{>title name=title big=true}}
+            </div>
+            <div class="card-body">
+            <p class="text-center">{{description}}</p>
+                <div>
+                {{#each buttons}}
+                <a href="{{link}}" class="btn btn-primary col-3 text-center mb-2">{{text}}</a>
+                <br>
+                {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/with}}
+<hr>
+<section>
+   {{#each footer}}
+    
+    <div class="nav">
+        {{#each []}}    
+        <div class='nav-item col-2'>
+            <a href='{{link}}' class='nav-link'>{{text}}</a>
+        </div>
+        {{/each}}    
+    </div>
+    {{/each}}
+    
+</section>
+</main>
