@@ -1369,90 +1369,108 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Home',
           link: 'https://www.youtube.com/',
+          isDisabled: true,
         },
         {
           text: 'Trending',
           link: 'https://www.youtube.com/feed/trending',
+          isDisabled: true,
         },
         {
           text: 'Subscriptions',
           link: 'https://www.youtube.com/feed/subscriptions',
+          isDisabled: true,
         },
         {
           text: 'Library',
           link: 'https://www.youtube.com/feed/library',
+          isDisabled: true,
+        },
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+          isDisabled: true,
         },
       ],
       [
         {
-          text: 'History',
-          link: 'https://www.youtube.com/feed/history',
-        },
-        {
           text: 'Your Videos',
           link: 'https://www.youtube.com/feed/my_videos',
+          isDisabled: true,
         },
         {
           text: 'Live',
           link: 'https://www.youtube.com/live',
+          isDisabled: true,
         },
         {
           text: 'Settings',
           link: 'https://www.youtube.com/account',
+          isDisabled: true,
         },
-      ],
-      [
         {
           text: 'Watch Later',
           link: 'https://www.youtube.com/playlist?list=WL',
+          isDisabled: true,
         },
         {
           text: 'Liked Videos',
           link: 'https://www.youtube.com/playlist?list=LL',
+          isDisabled: true,
         },
+      ],
+      [
         {
           text: 'Music',
           link: 'https://www.youtube.com/music',
+          isDisabled: true,
         },
         {
           text: 'Gaming',
           link: 'https://www.youtube.com/gaming',
+          isDisabled: true,
         },
-      ],
-      [
         {
           text: 'Sports',
           link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+          isDisabled: true,
         },
         {
           text: 'News',
           link: 'https://www.youtube.com/news',
+          isDisabled: true,
         },
         {
           text: 'Fashion & Beauty',
           link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
-        },
-        {
-          text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+          isDisabled: true,
         },
       ],
       [
         {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+          isDisabled: false,
+        },
+        {
           text: 'Report History',
           link: 'https://www.youtube.com/feed/history/report_history',
+          isDisabled: false,
         },
         {
           text: 'Help',
           link: 'https://support.google.com/youtube/?hl=en',
+          isDisabled: false,
         },
         {
           text: 'Send Feedback',
           link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+          isDisabled: false,
         },
         {
           text: 'About',
           link: 'https://www.youtube.com/about/',
+          isDisabled: false,
         },
       ],
     ],
