@@ -1,0 +1,68 @@
+{{#each reviewList}}
+        <div class="card">
+            {{#with title}}
+                <div class="card-header">
+                <h5 class="card-title">{{userName}}</h5>
+                <p>{{caption}}</p>
+                <p>{{date}}</p>
+                </div>
+            {{/with}}
+            <div class="card-body">
+                {{#with reviewBody}}
+                    <div class="mb-3">
+                        {{#with seller}}
+                        <p>{{title}}: {{value}}</p>
+                        {{/with}}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{#with rating}}
+                        <p>{{title}}: {{value}}</p>
+                        {{/with}}
+                    </div>
+
+                    <div class="mb-3">
+                        {{#each text}}
+                        <p>{{[]}}</p>
+                        {{/each}}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{#with advantages}}
+                        <b>{{title}}:</b>
+                        <div>{{text}}</div>
+                        {{/with}}
+                    </div>
+
+                    <div class="mb-3">
+                        {{#with disadvantages}}
+                        <b>{{title}}:</b>
+                        <div>{{text}}</div>
+                        {{/with}}
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            {{#each images}}
+                                <div class="col-2">
+                                <img class='card-img-top col-2'
+                                src='{{[]}}'/>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    {{#each coments}}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{userName}}</h5>
+                                <p>{{date}}</p>
+                                <p>{{text}}</p>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/with}} 
+            </div>
+
+        </div>
+    {{/each}}
