@@ -1,0 +1,171 @@
+<main>
+  <div>
+    <hr />
+    {{#with navigation}}
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+
+            <a href='{{href}}' class='nav-link'>{{text}}</a>
+
+          </div>
+        {{/each}}
+        <div class='nav-item'>
+          <a href='#' class='nav-link disabled'>Disabled</a>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+  <hr />
+
+  <section>
+    {{#with header}}
+      {{> title name=title big=true}}
+
+      {{#with button}}
+        <a
+          href='{{link}}'
+          class='btn btn-outline-secondary mt-2 mb-4'
+        >{{text}}</a>
+      {{/with}}
+    {{/with}}
+    <hr />
+  </section>
+
+  <div class="mb-4">  
+      {{#each goodsBlock}}
+          <div class="card mb-3">
+              <div class="row">
+                  <div class="col-2 m-2">
+                      <img class='card-img-top'
+                      src='{{image}}'
+                      alt='{{title}}'/>
+                  </div>
+                  <div class="col-4">
+                      <h5 class="card-title">{{title}}</h5>
+                      <p>{{description}}</p>
+                  </div>
+                  <div class="col-2 mt-3">
+                    {{#with price}}
+                        <h6>{{title}} :</h6>
+                        <p>{{value}}</p>
+                    {{/with}}
+                  </div>
+                  <div class="col-1 mt-3">
+                      <h6>{{amount}}</h6>
+                  </div>
+                  <div class="col-2">
+                  {{#each buttons}}
+                  {{#if isPrimary}}
+                    <a class="btn btn-primary mt-3 mb-2">{{text}}</a>
+                  {{/if}}
+                  {{#if isDanger}}
+                    <a class="btn btn-outline-danger">{{text}}</a>
+                  {{/if}}
+                  {{/each}}
+                  </div>
+            </div>
+        </div>
+          
+      {{/each}}
+  
+  </div>
+
+  
+      <hr>
+
+    {{#with total}}
+      <div>
+        {{> title name=title big=false}}
+      </div>
+      <div>
+        {{> title name=amount big=false}}
+      </div>
+      <p>{{delivery}}</p>
+      <div>
+          {{#each buttons}}
+              {{#if isSuccess}}
+                <a href="{{link}}" class="btn btn-success mt-3 mb-1">{{text}}</a>
+              {{/if}}
+                  <br>
+              {{#if isOutline}}
+                <a href="{{link}}" class="btn btn-outline-success mb-4">{{text}}</a>
+              {{/if}}
+          {{/each}}
+      </div>
+
+      <hr>
+    {{/with}}
+
+    {{#with goodsOtherBlock}}
+        <div class="text-center">
+        {{> title name=title big=false}}
+      </div>
+      
+      <div class="row">
+          {{#each cards}}
+        
+              <div class="col-4">
+                  <div class="card">
+                      <div>
+                          <img class='card-img-top'
+                          src='{{image}}'
+                          alt='{{title}}'/>
+                      </div>
+                      <div class='card-body'>
+                            <h5 class="card-title p-1">{{title}}
+                            {{#if isHot}}<span class="badge text-bg-warning rounded-pill">HOT!</span>{{/if}}
+                            {{#if idNew}}<span class="badge text-bg-primary rounded-pill">Нове</span>{{/if}}
+                            </h5>
+                            <p>{{description}}</p>
+                      </div>
+                  </div>  
+              </div>   
+          {{/each}}
+      </div>
+    {{/with}}
+
+    {{#with subscribe}}
+      <div class="row mt-5 mb-5">
+          <div class="col-12">
+              <div class="card text-bg-dark">
+                  <div class="card-header">
+                      {{>title name=header big=true}}
+                  </div>
+                  <div class="card-body">
+                  <p class="text-uppercase">{{description}}</p>
+                      <div>
+                      {{#each buttons}}
+                      <a href="{{link}}" class="btn btn-primary col-3 flex-column mb-2">{{text}}</a>
+                      <br>
+                      {{/each}}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <hr>
+    {{/with}}
+
+    <div class="row">
+        {{#each footer}}
+          <div class="col-2">
+              <div class="nav">
+                <div>
+                {{#each []}}
+                {{#if @last}}   
+                
+                  <a a href='{{link}}' class='nav-link disabled'>Disabled</a>
+                
+                  {{else}}
+                
+                  <a href='{{link}}' class='nav-link'>{{text}}</a>
+                  
+                {{/if}}
+                {{/each}}
+                </div>
+              </div>
+          </div>
+        {{/each}}
+    </div>
+</main>
