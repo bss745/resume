@@ -2398,5 +2398,24 @@ router.get('/shoperview', function (req, res) {
 
 // ================================================================
 
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index8',
+    header: {
+      name: {
+        firstname: 'Ivan',
+        lastname: 'Ivanov',
+      },
+      position: 'Junior Fullstack JS Developer',
+      salary: '$600 в місяць',
+      address: 'Ukraine, Kharkiv, ave. Victory 777',
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router
